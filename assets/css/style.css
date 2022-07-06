@@ -1,0 +1,83 @@
+:root {
+    --btnColor: rgb(105, 54, 201);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    align-items: center;
+    font: arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+/*High scores class*/
+.top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 130px;
+    font-size: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--btnColor);
+    font-weight: bold;
+    opacity: .8;
+}
+
+/* Styling high scores page */
+.high-scoresh1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+main {
+    padding-top: 60px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+}
+
+main h3{
+    padding-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--btnColor);
+    margin: 10px 0px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 10%;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(207, 47, 207);
+}
+
+.hideElement{
+    display: none;
+}

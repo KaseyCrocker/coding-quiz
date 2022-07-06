@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timed Quiz</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top">
+            <a href="./high-scores.html">View High Scores</a>
+            <div class="timer" >
+                <h3>Timer: <span id="countdown"></span></h3>
+            </div>
+        </div>
+    </header>
+
+    <main class="main" id="mainContainer">
+        <div id="startQuiz">
+            <h1>
+                Coding Quiz Challenge
+            </h1>
+            <h3> Try to answer the following code-related questions within the time limit. <br>
+                Keep in mind that incorrect answers will penalize your score/time<br>
+                by ten seconds!
+            </h3> 
+            
+            <button id="btn-start">Start Quiz</button>
+        </div> 
+
+        <div class="hideElement" id="showQuestions">
+            <h2 id="title"></h2>
+            <ul id="response">
+                <li class="option"></li>
+                <li class="option"></li>
+                <li class="option"></li>
+                <li class="option"></li>
+                </ul>
+        </div>
+
+        <div id="initials"></div>
+        <div id="final-score"></div>
+    </main>
+
+    <footer>
+        <script src="./assets/js/script.js"></script>
+    </footer>
+
+</body>
+</html>
