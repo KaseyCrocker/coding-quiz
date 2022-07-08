@@ -4,6 +4,8 @@ var submitButton = document.getElementById('submit');
 var btnStartVar = document.getElementById("btn-start");
 var startQuizVar = document.getElementById("startQuiz");
 var questionsArr = document.getElementById("showQuestions");
+var time = 75;
+var countDownVar = document.getElementById("countdown");
 
 function generateQuiz(){
     var myQuestions = [
@@ -89,10 +91,13 @@ function generateQuiz(){
                     <div class="answers"> ${answers.join("")} </div>
                 </div>`
 		    );
+            
+	        // finally combine our output list into one string of html and put it on the page
+            quizContainer.innerHTML = output.join('');
+            showSlide(0);
 	    });
 
-	// finally combine our output list into one string of html and put it on the page
-	quizContainer.innerHTML = output.join('');
+
 	}
 
 	function showResults() {
@@ -128,7 +133,7 @@ function generateQuiz(){
     }
 
     function showSlide(n) {
-        slides[currentSlide].classList.remove("active-slide");
+        slides[currentSlide].removeAttribute("active-slide");
         slides[n].classList.add("active-slide");
         currentSlide = n;
         
@@ -155,12 +160,13 @@ function generateQuiz(){
     var resultsContainer = document.getElementById("results");
     var submitButton = document.getElementById("submit");
 
-    quiz();
+    
 
     var nextButton = document.getElementById("next");
     var slides = document.querySelectorAll(".slide");
     var currentSlide = 0;
 
+    quiz();
     showSlide(0);
 
     // on submit, show results
@@ -168,13 +174,26 @@ function generateQuiz(){
     nextButton.addEventListener("click", showNextSlide);
 }
 
+function countDown (time){
+
+    var timeInterval = setInterval(function(){
+        
+        if(time > 0){
+            countDownVar.textContent = time;
+            time--;             
+        }
+
+    }, 1000);
+}
 
 btnStartVar.addEventListener("click", function(){
 
     btnStartVar.setAttribute("disabled","true"); // disable btn so the timer does not goes up and down in value, only strings
-    //countDown(time);
+    countDown(time);
     startQuizVar.setAttribute("class","hideElement"); // disable btn so the timer does not goes up and down in value, only strings
     questionsArr.removeAttribute("class");
     generateQuiz();
 });
+
+
 
